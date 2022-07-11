@@ -1,0 +1,102 @@
+@use 'variables';
+
+@mixin container {
+	max-widht: variables.$container-widht; /*(variavel criada em "_variables.sass")*/
+	padding: 1.5rem 0;
+	margin: 0 auto 2rem auto;
+    
+}
+
+@mixin flexbox {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    
+}
+
+@mixin lists {
+    display: inline-flex;
+    margin-right: 1rem;
+    list-style: none;
+}
+
+@mixin link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: variables.$primary-color;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+@mixin hover {
+    a {
+        transition: .5s;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            border-radius: 2px;
+            background-color: variables.$secundary-color;
+            bottom: 0;
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+        
+        &:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+          }
+}
+}
+
+@mixin bg-img($img) { 
+    background-image: url('../img/#{$img}');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    transition: .6s;
+
+
+    &:hover {
+        background-size: 110%;
+        filter: grayscale(0%); 
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/#{$img}'); 
+        
+    }
+}
+
+@mixin title {
+    color: variables.$primary-color;
+    text-shadow: 2px 1px 3px #35093a;
+    margin-bottom: 2rem;
+}
+
+@mixin btn {
+    padding: .6rem 2rem;
+    border-radius: .5rem;
+    border: 2px solid variables.$primary-color;
+    letter-spacing: 3px;
+    
+}
+
+@mixin projects {
+    padding: 10px;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    box-shadow: 1px 1px 4px black;
+    background-color: variables.$primary-color;;
+
+    transition: .6s;
+    
+    
+    &:hover {
+        background-color: variables.$secundary-color; 
+        
+    }
+}
