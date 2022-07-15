@@ -1,279 +1,552 @@
-@use 'mixins';
-@use 'variables';
+@use "mixins";
+@use "variables";
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin-inline: 2rem;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin-inline: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-    background-color: variables.$bg-color;
+  background-color: variables.$bg-color;
+  color: variables.$primary-color;
+
+  a:not(.header-brand) {
     color: variables.$primary-color;
+    @include mixins.link;
+  }
 
-    a:not(.header-brand)  {
-        color: variables.$primary-color;
-        @include mixins.link;
-    }
-
-    p,
-    h1,
-    h2,
-    h3{
-        cursor: pointer;
-    }
+  p,
+  h1,
+  h2,
+  h3 {
+    cursor: pointer;
+  }
 }
 
 // cabeçalho ---------
 
 .header {
-    @include mixins.container;
-    @include mixins.flexbox; 
-    justify-content: space-between;
-    
+  @include mixins.container;
+  @include mixins.flexbox;
+  justify-content: space-between;
 
-    &-brand {
-        @include mixins.title;
-        text-decoration: none;
-        font-size: 2rem;
-        transition: transform .2s;
+  &-brand {
+    @include mixins.title;
+    text-decoration: none;
+    font-size: 2rem;
+    transition: transform 0.2s;
+
+    @include mixins.mobile {
+      margin-inline: auto;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      color: variables.$secundary-color;
+    }
+
+    @include mixins.mobile {
+      padding: 0.5rem;
+      margin-bottom: -30px;
+    }
+  }
+
+  &-navbar {
+    li {
+      @include mixins.lists;
+      @include mixins.hover;
+    }
+
+    @include mixins.mobile {
+      display: none;
+    }
+  }
+
+  &-social-media {
+    li {
+      @include mixins.lists;
+
+      @include mixins.mobile {
+        display: none;
+      }
+      a {
+        transition: 0.5s;
 
         &:hover {
-            transform: scale(1.05);
-            color: variables.$secundary-color;
+          color: variables.$secundary-color;
         }
+      }
     }
-
-    &-navbar {
-        li {
-            @include mixins.lists;
-            @include mixins.hover;
-        }
-    }
-
-    &-social-media {
-        li {
-            @include mixins.lists; 
-           a {
-            transition: .5s;
-
-            &:hover {
-                color: variables.$secundary-color;
-            }
-           }
-        }
-    }
+  }
 }
 
 .active {
-    border-bottom: 2px solid variables.$text-color;
+  border-bottom: 2px solid variables.$text-color;
 }
-
 
 // galeria sem imagens ---------
 .gallery {
-    @include mixins.flexbox;
-    @include mixins.container;
-    justify-content: space-between;
+  @include mixins.flexbox;
+  @include mixins.container;
+  justify-content: space-between;
 
-    flex-wrap: wrap; 
-    padding: 0;
+  flex-wrap: wrap;
+  padding: 0;
 
-    &-card {
-        width: 30%;
-        height: 400px;
-        margin-bottom: 4%;
-        flex-direction: column; 
-        color: variables.$primary-color;
-        
+  @include mixins.mobile {
+    flex-direction: column;
+  }
 
-        &-title {
-            text-transform: uppercase;
-            font-size: 2rem;
-            font-weight: 300;
-            margin-bottom: 1rem;  
-            transform: translateY(250%); 
-        }
+  &-card {
+    width: 30%;
+    height: 400px;
+    margin-bottom: 4%;
+    flex-direction: column;
+    color: variables.$primary-color;
+
+    @include mixins.mobile {
+      width: 90%;
+      margin-bottom: 6%;
+    }
+
+    &-title {
+      text-transform: uppercase;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      transform: translateY(250%);
+    }
 
     &-btn {
-        @include mixins.btn;
-       
-        position: relative;
-        top: 30%;
-        transform: translateY(-50%); 
+      @include mixins.btn;
 
-        &:hover {
-            background-color: variables.$primary-color;
-            color: variables.$text-color;
-        }
+      position: relative;
+      top: 30%;
+      transform: translateY(-50%);
+
+      &:hover {
+        background-color: variables.$primary-color;
+        color: variables.$text-color;
+      }
     }
-    }
+  }
 }
 
 // images ---------
 #card-1 {
-    @include mixins.bg-img('img-bruna.png');
-    }
+  @include mixins.bg-img("img-bruna.png");
+}
 #card-2 {
-    @include mixins.bg-img('code.jpg');
-    }
+  @include mixins.bg-img("code.jpg");
+}
 #card-3 {
-    @include mixins.bg-img('lemonesa.png');
-        }
+  @include mixins.bg-img("joia-vermelha.jpg");
+}
 #card-4 {
-    @include mixins.bg-img('joia-vermelha.jpg');
-        }
+  @include mixins.bg-img("lemonesa.png");
+}
 #card-5 {
-    @include mixins.bg-img('design.png');
-        }
+  @include mixins.bg-img("design.png");
+}
 #card-6 {
-    @include mixins.bg-img('mulher.png');
-        }
+  @include mixins.bg-img("mulher.png");
+}
 
 // footer -----------
 
 footer {
-    text-align: center;
-    padding-bottom: 2rem;
-  
-    span {
-      font-weight: bold;
-      color: variables.$secundary-color;
-    }
-  }
+  text-align: center;
+  padding-bottom: 2rem;
 
+  span {
+    font-weight: bold;
+    color: variables.$secundary-color;
+  }
+}
 
 // -------------- TEMPLATE PADRÃO NOVAS PÁGINAS (grid)
 
 .grid-Container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr;
 
-    
+  height: 35vh;
+  margin-bottom: 5%;
 
-    height: 30vh;
-    overflow: hidden;
+  align-items: center;
 
-    align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  @include mixins.mobile {
+    margin-bottom: 15%;
+  }
 
-
+  @include mixins.mobile-small {
+    margin-bottom: 15%;
+    height: 25vh;
+  }
 }
 
-.col-1 {
-    grid-column: 1 / 2;
+// projetos --------------------------------------
 
-    h1 {
-    @include mixins.title;
-    text-transform: uppercase;
-    }   
+.grid-container-projetos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0 20px;
+
+  height: 100vh;
+
+  img {
+    width: 100%;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: variables.$text-color;
+  }
+  .hover-projetos {
+    @include mixins.projects;
+  }
+
+  .col1 {
+    grid-column: 1 / 2;
+  }
+
+  .col2 {
+    grid-column: 2 / 3;
+  }
+
+  .col3 {
+    grid-column: 3 / 4;
+  }
+
+  .subtitle {
+    @include mixins.link;
+    color: variables.$bg-color;
+    text-shadow: 0.5px 0.5px 3px #a450ae;
+  }
+
+  @include mixins.mobile {
+    display: block;
+    margin-top: 15%;
+  }
+}
+
+// fotos -------------------------
+
+.grid-container-fotos {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 20%, 1fr;
+  gap: 10px 20px;
+
+  @include mixins.mobile {
+    display: block;
+    margin: 5% auto;
+  }
+
+  h1 {
+    margin-top: 20%;
+
+    text-align: center;
+
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: variables.$secundary-color;
+
+    grid-column: 2 / 3;
+
+    @include mixins.mobile {
+      font-size: 1.5rem;
+    }
+  }
+
+  .carrossel {
+    position: relative;
+    margin-top: 4vh;
+    overflow: hidden;
+    height: 500px;
+    width: 500px;
+
+    box-shadow: 2px 2px 4px black;
+
+    text-align: center;
+
+    @include mixins.mobile {
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 10% auto;
+    }
+
+    .go {
+      @include mixins.button;
+      left: 36vw;
+
+      @include mixins.mobile {
+        font-size: 1rem;
+        top: 40vh;
+        left: 50vw;
+      }
+    }
+
+    .back {
+      @include mixins.button;
+      right: 36vw;
+
+      @include mixins.mobile {
+        font-size: 1rem;
+        top: 40vh;
+        right: 50vw;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(0);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2vh;
+
+    object-fit: cover;
+  }
+
+  .row1 {
+    grid-row: 1 / 2;
+  }
+  .row2 {
+    grid-row: 2 / 3;
+  }
+  .row3 {
+    grid-row: 3 / 4;
+  }
+  .row4 {
+    grid-row: 4 / 5;
+  }
+  .row5 {
+    grid-row: 5 / 6;
+  }
+  .row6 {
+    grid-row: 6 / 7;
+  }
+
+  .col1 {
+    grid-column: 2 / 3;
+  }
+
+  .subtitle {
+    @include mixins.link;
+    color: variables.$primary-color;
+    text-shadow: 0.5px 0.5px 3px #a450ae;
+    margin-bottom: 2vh;
+  }
+}
+
+// sobre
+
+.col-1 {
+  grid-column: 1 / 2;
 }
 
 .col-2 {
-    grid-row: 1 / 2;
-    grid-column: 3 / 4;
-    @include mixins.flexbox;
-    justify-content: flex-end;
+  grid-row: 1 / 2;
+  grid-column: 3 / 4;
+  @include mixins.flexbox;
+  justify-content: flex-end;
 
-    img {
-        width: 40%
-        }
+  img {
+    width: 40%;
+
+    @include mixins.mobile {
+      margin-inline: auto;
+    }
+  }
 }
 
 .grid-container-main {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 6fr;
-    gap: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 6fr;
+  gap: 0 20px;
 
-    height: 50vh;
+  height: 50vh;
+
+  @include mixins.mobile {
+    display: block;
+  }
 }
 
 .col-3 {
-    grid-column: 1 / 4;
+  grid-column: 1 / 4;
 
+  p {
+    margin: 12px 0;
+  }
 
-    p {
-        margin: 12px 0;
-    }
+  img {
+    width: 40%;
+    margin-bottom: 10vh;
+  }
 
-    img {
-        width: 40%;
-        margin-bottom: 10vh;
-        }
+  h1 {
+    @include mixins.title;
+    text-transform: uppercase;
+  }
 }
 
 .col-4 {
-    grid-column: 5 / 6;
-    
+  grid-column: 5 / 6;
 
-    li {
-        @include mixins.lists;
-        display: flex;
-        margin-bottom: 2rem;
-        
-    
-        a {
-        @include mixins.btn;
-        
-        
-        &:hover {
-            background-color: variables.$primary-color;
-            color: variables.$text-color;
-            }
-        }
-    } 
+  li {
+    @include mixins.lists;
+    display: flex;
+    margin-bottom: 2rem;
+
+    a {
+      @include mixins.btn;
+
+      &:hover {
+        background-color: variables.$primary-color;
+        color: variables.$text-color;
+      }
+    }
+
+    @include mixins.mobile {
+      display: block;
+      margin-top: 15%;
+    }
+  }
+}
+
+//tabela
+.col-5 {
+  grid-column: 1 / 6;
 }
 
 .row-1 {
-    grid-row: 2 / 3; 
-    p {
-        grid-row: 2 / 3;
-    }
+  grid-row: 2 / 3;
+  p {
+    grid-row: 2 / 3;
+  }
 }
 
-// projetos
+.row-2 {
+  grid-row: 3 / 4;
+}
 
-.grid-container-projetos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    gap: 0 20px;
+.sobre-tabela {
+  margin-block: 4rem;
 
-    height: 100vh;
+  h1 {
+    margin-bottom: 1.5rem;
+    @include mixins.title;
+    text-transform: uppercase;
+  }
 
-    img {
-        width: 100%;
+  table {
+    border-collapse: collapse;
+    text-align: center;
+
+    th {
+      text-transform: uppercase;
+      color: variables.$bg-color;
+      letter-spacing: 1px;
+      font-weight: 700;
     }
 
-    p {
+    th,
+    tr,
+    td {
+      border: 2px solid black;
+      background-color: variables.$text-color;
+      padding: 2rem 10rem;
+      cursor: default;
+
+      button {
+        @include mixins.button-table;
+      }
+
+      button:hover {
+        background-color: variables.$bg-color;
+        color: variables.$secundary-color;
+      }
+
+      i {
+        font-size: 2rem;
+      }
+    }
+
+    @include mixins.mobile {
+      display: none;
+    }
+  }
+}
+
+.tabela-mobile {
+  display: none;
+}
+
+@include mixins.mobile {
+  .tabela-mobile {
+    display: block;
+    text-align: center;
+  
+    div {
+      margin-bottom: 1rem;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      padding: 2rem 20%;
+  
+      h3 {
+        text-transform: uppercase;
+        @include mixins.link
+      }
+  
+      i {
+        margin-top: 1rem
+      }
+  
+      button {
+        @include mixins.button-table;
         margin-top: 1rem;
-        color: variables.$text-color;
+      }
     }
+  }
 }
 
-.col1 {
-    grid-column: 1 / 2;
-    @include mixins.projects;
+.footer {
+  display: none;
 }
 
-.col2 {
-    grid-column: 2 / 3;
-    @include mixins.projects;
-}
+@include mixins.mobile {
+  .footer {
+    display: contents;
+    ul {
+      display: flex;
+      gap: 1rem;
 
-.col3 {
-    grid-column: 3 / 4;
-    @include mixins.projects;
-}
-
-.subtitle {
-    @include mixins.link;
-    color: variables.$bg-color;
-    text-shadow: .5px .5px 3px #a450ae;
+      li {
+        list-style: none;
+        margin: 2rem auto;
+        a {
+          text-decoration: none;
+          text-transform: uppercase;
+          color: variables.$secundary-color;
+        }
+      }
+    }
+  }
 }

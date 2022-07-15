@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <title>Sobre</title>
 </head>
 
@@ -29,7 +35,7 @@
             </ul>
         </nav>
     </header>
-    
+
     <main class="grid-container-main">
 
         <div class="col-3 row-1">
@@ -50,11 +56,123 @@
             <ul>
                 <li><a href="https://github.com/BrunaFusiger" target="_blank">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/bruna-fusiger-5585a11ba/" target="_blank">Linkedin</a></li>
-                <li><a href="https://www.instagram.com/codewithbru/?hl=pt"  target="_blank">Instagram</a></li>
+                <li><a href="https://www.instagram.com/codewithbru/?hl=pt" target="_blank">Instagram</a></li>
             </ul>
 
         </div>
+
+        <div class="col-5 row-2 sobre-tabela">
+            <h1>Hard Skills:</h1>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tecnologia</th>
+                        <th>Logo</th>
+                        <th>O que já fiz</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML5</td>
+                        <td><i class="fa-brands fa-html5"></i></td>
+                        <td class="evento-clique"><button onclick="tableClick()">clique</button><span class="message"></span></td>
+                    </tr>
+                    <tr>
+                        <td>CSS3</td>
+                        <td><i class="fa-brands fa-css3-alt"></i></td>
+                        <td class="evento-clique"><button onclick="tableClick()">clique</button><span class="message"></span></td>
+                    </tr>
+                    <tr>
+                        <td>SCSS</td>
+                        <td><i class="fa-brands fa-sass"></i></td>
+                        <td class="evento-clique"><button onclick="tableClick()">clique</button><span class="message"></span></td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td><i class="fa-brands fa-js"></i></td>
+                        <td class="evento-clique"><button onclick="tableClick()">clique</button><span class="message"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Vue.js</td>
+                        <td><i class="fa-brands fa-vuejs"></i></td>
+                        <td class="evento-clique"><button onclick="tableClick()">clique</button><span class="message"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Git e GitHub</td>
+                        <td><i class="fa-brands fa-git-alt"></i> <i class="fa-brands fa-github"></i>
+                        <td class="evento-clique"><button onclick="tableClick()">clique</button><span class="message"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Figma</td>
+                        <td><i class="fa-brands fa-figma"></i></td>
+                        <td class="evento-clique"><button onclick="tableClick()">clique</button><span class="message"></span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <section class="tabela-mobile">
+                <div>
+                    <h3>HTML5</h3><i class="fa-brands fa-html5"></i> <br>
+                    <button onclick="tableClick()">clique</button>
+                    <span class="message"></span>
+                </div>
+                <div>
+                    <h3>CSS3</h3><i class="fa-brands fa-css3-alt"></i> <br>
+                    <button onclick="tableClick()">clique</button>
+                    <span class="message"></span>
+                </div>
+                <div>
+                    <h3>SCSS</h3><i class="fa-brands fa-sass"></i> <br>
+                    <button onclick="tableClick()">clique</button>
+                    <span></span>
+                </div>
+                <div>
+                    <h3>JavaScript</h3><i class="fa-brands fa-js"></i> <br>
+                    <button onclick="tableClick()">clique</button>
+                    <span></span>
+                </div>
+                <div>
+                    <h3>Vue.js</h3><i class="fa-brands fa-vuejs"></i><br>
+                    <button onclick="tableClick()">clique</button>
+                    <span class="message"></span>
+                </div>
+                <div>
+                    <h3>Git e GitHub</h3><i class="fa-brands fa-git-alt"></i> <br> <i class="fa-brands fa-github"></i> <br>
+                    <button onclick="tableClick()">clique</button>
+                    <span class="message"></span>
+                </div>
+                <div>
+                    <h3>figma</h3><i class="fa-brands fa-figma"></i> <br>
+                    <button onclick="tableClick()">clique</button>
+                    <span class="message"></span>
+                </div>
+            </section>
+            <br> <br>
+        </div>
+
+
+        <section>
+            <nav class="footer">
+                <ul>
+                    <li>
+                        <a href="/index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="/pages/projetos.html">projetos</a>
+                    </li>
+                    <li>
+                        <a href="/pages/fotos.html">Fotos</a>
+                    </li>
+                    <li>
+                        <a href="/pages/sobre.html">Sobre</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
     </main>
+
+    <script src="/javascript/index.js"></script>
 </body>
 
 </html>

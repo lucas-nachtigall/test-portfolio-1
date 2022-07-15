@@ -1,102 +1,151 @@
-@use 'variables';
+@use "variables";
 
 @mixin container {
-	max-widht: variables.$container-widht; /*(variavel criada em "_variables.sass")*/
-	padding: 1.5rem 0;
-	margin: 0 auto 2rem auto;
-    
+  max-widht: variables.$container-widht; /*(variavel criada em "_variables.sass")*/
+  padding: 1.5rem 0;
+  margin: 0 auto 2rem auto;
 }
 
 @mixin flexbox {
-    text-align: center;
-    align-items: center;
-    display: flex;
-    
+  text-align: center;
+  align-items: center;
+  display: flex;
 }
 
 @mixin lists {
-    display: inline-flex;
-    margin-right: 1rem;
-    list-style: none;
+  display: inline-flex;
+  margin-right: 1rem;
+  list-style: none;
 }
 
 @mixin link {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: variables.$primary-color;
-    letter-spacing: 2px;
-    font-weight: 400;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: variables.$primary-color;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 @mixin hover {
-    a {
-        transition: .5s;
-        position: relative;
+  a {
+    transition: 0.5s;
+    position: relative;
 
-        &::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            border-radius: 2px;
-            background-color: variables.$secundary-color;
-            bottom: 0;
-            left: 0;
-            transform-origin: right;
-            transform: scaleX(0);
-            transition: transform .3s ease-in-out;
-        }
-        
-        &:hover::before {
-            transform-origin: left;
-            transform: scaleX(1);
-          }
-}
-}
-
-@mixin bg-img($img) { 
-    background-image: url('../img/#{$img}');
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    filter: grayscale(100%);
-    transition: .6s;
-
-
-    &:hover {
-        background-size: 110%;
-        filter: grayscale(0%); 
-        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/#{$img}'); 
-        
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background-color: variables.$secundary-color;
+      bottom: 0;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
     }
+
+    &:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+}
+
+@mixin bg-img($img) {
+  background-image: url("../img/#{$img}");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+  transition: 0.6s;
+
+  &:hover {
+    background-size: 110%;
+    filter: grayscale(0%);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url("../img/#{$img}");
+  }
 }
 
 @mixin title {
-    color: variables.$primary-color;
-    text-shadow: 2px 1px 3px #35093a;
-    margin-bottom: 2rem;
+  color: variables.$primary-color;
+  text-shadow: 2px 1px 3px #35093a;
+  margin-bottom: 2rem;
 }
 
 @mixin btn {
-    padding: .6rem 2rem;
-    border-radius: .5rem;
-    border: 2px solid variables.$primary-color;
-    letter-spacing: 3px;
-    
+  padding: 0.6rem 2rem;
+  border-radius: 0.5rem;
+  border: 2px solid variables.$primary-color;
+  letter-spacing: 3px;
 }
 
 @mixin projects {
-    padding: 10px;
-    margin-bottom: 2rem;
-    border-radius: 5px;
-    box-shadow: 1px 1px 4px black;
-    background-color: variables.$primary-color;;
+  padding: 10px;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px black;
+  background-color: variables.$primary-color;
 
-    transition: .6s;
-    
-    
-    &:hover {
-        background-color: variables.$secundary-color; 
-        
-    }
+  transition: 0.6s;
+
+  &:hover {
+    background-color: variables.$secundary-color;
+  }
 }
+
+@mixin mobile {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+    @media (max-width: 414px) {
+      @content;
+    }
+  }
+
+@mixin footer {
+  .footer {
+    display: flex;
+    gap: 2rem;
+    color: variables.$primary-color;
+    background-color: variables.$bg-color;
+    margin: 10% auto;
+    
+
+    li a {
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@mixin button {
+      font-size: 3rem;
+
+      color: rgba($color: #FEE64E, $alpha: .5);
+      background-color: transparent;
+      border-color: transparent;
+      text-shadow: 1px 1px 5px rgba($color: #fff, $alpha: .4);
+
+      position: absolute;
+      top: 35vh;
+
+
+}
+
+@mixin button-table {
+    background-color: variables.$secundary-color;
+    color: variables.$bg-color;
+
+    cursor: pointer;
+    transition: 0.5s;
+
+    border-color: transparent;
+    border-radius: 3px;
+
+    padding: 10px 30px;
+  }
