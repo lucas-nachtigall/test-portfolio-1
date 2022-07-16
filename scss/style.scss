@@ -269,47 +269,6 @@ footer {
     }
   }
 
-  .carrossel {
-    position: relative;
-    margin-top: 4vh;
-    overflow: hidden;
-    height: 500px;
-    width: 500px;
-
-    box-shadow: 2px 2px 4px black;
-
-    text-align: center;
-
-    @include mixins.mobile {
-      width: 100%;
-      height: 100%;
-      display: block;
-      margin: 10% auto;
-    }
-
-    .go {
-      @include mixins.button;
-      left: 36vw;
-
-      @include mixins.mobile {
-        font-size: 1rem;
-        top: 40vh;
-        left: 50vw;
-      }
-    }
-
-    .back {
-      @include mixins.button;
-      right: 36vw;
-
-      @include mixins.mobile {
-        font-size: 1rem;
-        top: 40vh;
-        right: 50vw;
-      }
-    }
-  }
-
   .container {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -355,7 +314,53 @@ footer {
   }
 }
 
-// sobre
+  .carrossel {
+    position: relative;
+    margin-top: 4vh;
+    overflow: hidden;
+    height: 500px;
+    width: 500px;
+
+    box-shadow: 2px 2px 4px black;
+
+    text-align: center;
+
+    @include mixins.mobile {
+      width: 100%;
+      height: 100%;
+      display: block;
+      margin: 10% auto;
+    }
+
+
+    button {
+      display: inline-flex;
+      margin: 1rem 1rem;
+    }
+
+    .go {
+      @include mixins.button;
+      left: 34vw;
+
+      @include mixins.mobile {
+        font-size: 2rem;
+        position:static;
+      }
+    }
+
+    .back {
+      @include mixins.button;
+      right: 34vw;
+
+      @include mixins.mobile {
+        font-size: 2rem;
+        position:static;
+      }
+    }
+  }
+
+
+// sobre ---------------
 
 .col-1 {
   grid-column: 1 / 2;
@@ -462,7 +467,7 @@ footer {
 
     th {
       text-transform: uppercase;
-      color: variables.$bg-color;
+      color: variables.$secundary-color;
       letter-spacing: 1px;
       font-weight: 700;
     }
@@ -471,12 +476,14 @@ footer {
     tr,
     td {
       border: 2px solid black;
-      background-color: variables.$text-color;
+      background-color: rgba($color: #a450ae, $alpha: 0.2);
+      backdrop-filter: blur(10px);
       padding: 2rem 10rem;
       cursor: default;
 
       button {
         @include mixins.button-table;
+        margin: 1rem 0;
       }
 
       button:hover {
@@ -484,8 +491,13 @@ footer {
         color: variables.$secundary-color;
       }
 
-      i {
+      a {
         font-size: 2rem;
+        transition: 0.5s;
+
+        &:hover {
+          color: variables.$secundary-color;
+        }
       }
     }
 
@@ -503,25 +515,25 @@ footer {
   .tabela-mobile {
     display: block;
     text-align: center;
-  
+
     div {
       margin-bottom: 1rem;
       border: 1px solid #fff;
       border-radius: 4px;
       padding: 2rem 20%;
-  
+
       h3 {
         text-transform: uppercase;
-        @include mixins.link
+        @include mixins.link;
       }
-  
+
       i {
-        margin-top: 1rem
+        margin-top: 1rem;
       }
-  
+
       button {
         @include mixins.button-table;
-        margin-top: 1rem;
+        margin: 1rem 0;
       }
     }
   }

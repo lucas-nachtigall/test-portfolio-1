@@ -349,57 +349,6 @@ footer span {
     font-size: 1.5rem;
   }
 }
-.grid-container-fotos .carrossel {
-  position: relative;
-  margin-top: 4vh;
-  overflow: hidden;
-  height: 500px;
-  width: 500px;
-  box-shadow: 2px 2px 4px black;
-  text-align: center;
-}
-@media (max-width: 700px) {
-  .grid-container-fotos .carrossel {
-    width: 100%;
-    height: 100%;
-    display: block;
-    margin: 10% auto;
-  }
-}
-.grid-container-fotos .carrossel .go {
-  font-size: 3rem;
-  color: rgba(254, 230, 78, 0.5);
-  background-color: transparent;
-  border-color: transparent;
-  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.4);
-  position: absolute;
-  top: 35vh;
-  left: 36vw;
-}
-@media (max-width: 700px) {
-  .grid-container-fotos .carrossel .go {
-    font-size: 1rem;
-    top: 40vh;
-    left: 50vw;
-  }
-}
-.grid-container-fotos .carrossel .back {
-  font-size: 3rem;
-  color: rgba(254, 230, 78, 0.5);
-  background-color: transparent;
-  border-color: transparent;
-  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.4);
-  position: absolute;
-  top: 35vh;
-  right: 36vw;
-}
-@media (max-width: 700px) {
-  .grid-container-fotos .carrossel .back {
-    font-size: 1rem;
-    top: 40vh;
-    right: 50vw;
-  }
-}
 .grid-container-fotos .container {
   display: flex;
   transition: transform 0.5s ease-in-out;
@@ -441,6 +390,60 @@ footer span {
   color: #fff;
   text-shadow: 0.5px 0.5px 3px #a450ae;
   margin-bottom: 2vh;
+}
+
+.carrossel {
+  position: relative;
+  margin-top: 4vh;
+  overflow: hidden;
+  height: 500px;
+  width: 500px;
+  box-shadow: 2px 2px 4px black;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .carrossel {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 10% auto;
+  }
+}
+.carrossel button {
+  display: inline-flex;
+  margin: 1rem 1rem;
+}
+.carrossel .go {
+  font-size: 3rem;
+  color: rgba(254, 230, 78, 0.5);
+  background-color: transparent;
+  border-color: transparent;
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 35vh;
+  left: 34vw;
+}
+@media (max-width: 700px) {
+  .carrossel .go {
+    font-size: 2rem;
+    position: static;
+  }
+}
+.carrossel .back {
+  font-size: 3rem;
+  color: rgba(254, 230, 78, 0.5);
+  background-color: transparent;
+  border-color: transparent;
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 35vh;
+  right: 34vw;
+}
+@media (max-width: 700px) {
+  .carrossel .back {
+    font-size: 2rem;
+    position: static;
+  }
 }
 
 .col-1 {
@@ -552,7 +555,7 @@ footer span {
 }
 .sobre-tabela table th {
   text-transform: uppercase;
-  color: #4D1354;
+  color: #FEE64E;
   letter-spacing: 1px;
   font-weight: 700;
 }
@@ -560,7 +563,8 @@ footer span {
 .sobre-tabela table tr,
 .sobre-tabela table td {
   border: 2px solid black;
-  background-color: #a450ae;
+  background-color: rgba(164, 80, 174, 0.2);
+  backdrop-filter: blur(10px);
   padding: 2rem 10rem;
   cursor: default;
 }
@@ -574,6 +578,7 @@ footer span {
   border-color: transparent;
   border-radius: 3px;
   padding: 10px 30px;
+  margin: 1rem 0;
 }
 .sobre-tabela table th button:hover,
 .sobre-tabela table tr button:hover,
@@ -581,10 +586,16 @@ footer span {
   background-color: #4D1354;
   color: #FEE64E;
 }
-.sobre-tabela table th i,
-.sobre-tabela table tr i,
-.sobre-tabela table td i {
+.sobre-tabela table th a,
+.sobre-tabela table tr a,
+.sobre-tabela table td a {
   font-size: 2rem;
+  transition: 0.5s;
+}
+.sobre-tabela table th a:hover,
+.sobre-tabela table tr a:hover,
+.sobre-tabela table td a:hover {
+  color: #FEE64E;
 }
 @media (max-width: 700px) {
   .sobre-tabela table {
@@ -626,7 +637,7 @@ footer span {
     border-color: transparent;
     border-radius: 3px;
     padding: 10px 30px;
-    margin-top: 1rem;
+    margin: 1rem 0;
   }
 }
 .footer {
