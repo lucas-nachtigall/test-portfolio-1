@@ -282,10 +282,16 @@ footer span {
 }
 .grid-container-projetos img {
   width: 100%;
+  transition: 0.3s all ease;
+  cursor: pointer;
+}
+.grid-container-projetos img:hover {
+  transform: scale(0.9);
 }
 .grid-container-projetos p {
   margin-top: 1rem;
   color: #a450ae;
+  cursor: default;
 }
 .grid-container-projetos .hover-projetos {
   padding: 10px;
@@ -315,6 +321,7 @@ footer span {
   font-weight: 400;
   color: #4D1354;
   text-shadow: 0.5px 0.5px 3px #a450ae;
+  cursor: default;
 }
 @media (max-width: 700px) {
   .grid-container-projetos {
@@ -348,6 +355,14 @@ footer span {
   .grid-container-fotos h1 {
     font-size: 1.5rem;
   }
+}
+.grid-container-fotos #macro-span {
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  grid-column: 2/3;
+  display: block;
 }
 .grid-container-fotos .container {
   display: flex;
@@ -598,8 +613,33 @@ footer span {
   color: #FEE64E;
 }
 @media (max-width: 700px) {
-  .sobre-tabela table {
+  .sobre-tabela table thead {
     display: none;
+  }
+  .sobre-tabela table tbody .container-message {
+    grid-column: 1/2;
+    border-color: transparent;
+    width: 90vw;
+    height: 90vw;
+    position: relative;
+  }
+  .sobre-tabela table tbody .container-message td {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
+.sobre-tabela table span {
+  animation: blinker 0.5s ease-in-out;
+}
+@keyframes blinker {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 

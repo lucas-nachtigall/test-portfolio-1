@@ -73,95 +73,55 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="container-message" class="container-message">
+                    <tr class="container-message">
                         <td>HTML5</td>
-                        <td> <a href="https://www.w3schools.com/html/" target="_blank"><i
+                        <td class="td-icones"><a href="https://www.w3schools.com/html/" target="_blank"><i
                                     class="fa-brands fa-html5"></i></a></td>
-                        <td class="evento-clique"><button onclick="tableClick('Diversas Landing Pages feitas durante o curso #TeuFuturo e Web design (Udemy)')">clique</button><br>
-                            <span id="message0"></span>
+                        <td class="evento-clique"><button id="btnMostrarMenos0" onclick="tableClick(0)">clique</button><br>
+                            <span id="message0" style="display: none;"></span>
                         </td>
                     </tr>
                     <tr class="container-message">
                         <td>CSS3</td>
-                        <td><a href="https://www.w3schools.com/css/" target="_blank"><i
+                        <td class="td-icones"><a href="https://www.w3schools.com/css/" target="_blank"><i
                                     class="fa-brands fa-css3-alt"></i></a></td>
-                        <td class="evento-clique"><button onclick="tableClick('Estilizei as Landing Pages, e fiz cursos de CSS na Udemy, Alura e DIO')">clique</button><span
-                                id="message1"></span></td>
+                        <td class="evento-clique"><button id="btnMostrarMenos1" onclick="tableClick(1)">clique</button><span
+                                id="message1" style="display: none;"></span></td>
                     </tr>
                     <tr class="container-message">
                         <td>SCSS</td>
-                        <td><a href="https://sass-lang.com/" target="_blank"><i class="fa-brands fa-sass"></i></a></td>
-                        <td class="evento-clique"><button onclick="tableClick('Fiz o projeto Galleria durante o curso de Sass do Matheus Battisti e esse Site aqui')">clique</button><span
-                                id="message2"></span></td>
+                        <td class="td-icones"><a href="https://sass-lang.com/" target="_blank"><i class="fa-brands fa-sass"></i></a></td>
+                        <td class="evento-clique"><button id="btnMostrarMenos2" onclick="tableClick(2)">clique</button><span
+                                id="message2" style="display: none;"></span></td>
                     </tr>
                     <tr class="container-message">
                         <td>JavaScript</td>
-                        <td><a href="https://www.javascript.com/" target="_blank"><i class="fa-brands fa-js"></i></a>
+                        <td class="td-icones"><a href="https://www.javascript.com/" target="_blank"><i class="fa-brands fa-js"></i></a>
                         </td>
-                        <td class="evento-clique"><button onclick="tableClick('Pratiquei lógica com os cursos da Alura, participei de um hackaton do curso #TeuFuturo e fiz alguns sites usando essa Linguagem')">clique</button><span
-                                id="message3"></span></td>
+                        <td class="evento-clique"><button id="btnMostrarMenos3" onclick="tableClick(3)">clique</button><span
+                                id="message3" style="display: none;"></span></td>
                     </tr>
                     <tr class="container-message">
                         <td>Vue.js</td>
-                        <td><a href="https://vuejs.org/" target="_blank"><i class="fa-brands fa-vuejs"></i></a></td>
-                        <td class="evento-clique"><button onclick="tableClick('Fiz o projeto Hamburgueria durante o curso de Vue.js do Matheus Battisti e estou criando um projeto com o framework')">clique</button><span
-                                id="message4"></span></td>
+                        <td class="td-icones"><a href="https://vuejs.org/" target="_blank"><i class="fa-brands fa-vuejs"></i></a></td>
+                        <td class="evento-clique"><button id="btnMostrarMenos4" onclick="tableClick(4)">clique</button><span
+                                id="message4" style="display: none;"></span></td>
                     </tr>
                     <tr class="container-message">
                         <td>Git e GitHub</td>
-                        <td><a href="https://github.com/" target="_blank"><i class="fa-brands fa-git-alt"></i><i
+                        <td class="td-icones"><a href="https://github.com/" target="_blank"><i class="fa-brands fa-git-alt"></i><i
                                     class="fa-brands fa-github"></i></a>
-                        <td class="evento-clique"><button onclick="tableClick('Uso para o versionamento de códigos dos meus projetos')">clique</button><span
-                                id="message5"></span></td>
+                        <td class="evento-clique"><button id="btnMostrarMenos5" onclick="tableClick(5)">clique</button><span
+                                id="message5" style="display: none;"></span></td>
                     </tr>
                     <tr class="container-message">
                         <td>Figma</td>
-                        <td><a href="https://www.figma.com/" target="_blank"><i class="fa-brands fa-figma"></i></a></td>
-                        <td class="evento-clique"><button onclick="tableClick('Faço a prototipação de meus projetos com o Figma')">clique</button><span
-                                id="message6"></span></td>
+                        <td class="td-icones"><a href="https://www.figma.com/" target="_blank"><i class="fa-brands fa-figma"></i></a></td>
+                        <td class="evento-clique"><button id="btnMostrarMenos6" onclick="tableClick(6)">clique</button><span
+                                id="message6" style="display: none;"></span></td>
                     </tr>
                 </tbody>
             </table>
-
-            <section class="tabela-mobile">
-                <div>
-                    <h3>HTML5</h3><i class="fa-brands fa-html5"></i> <br>
-                    <button onclick="tableClick('Diversas Landing Pages feitas durante o curso #TeuFuturo e Web design (Udemy)')">clique</button>
-                    <span id="message"></span>
-                </div>
-                <div>
-                    <h3>CSS3</h3><i class="fa-brands fa-css3-alt"></i> <br>
-                    <button onclick="tableClick('Estilizei as Landing Pages, e fiz cursos de CSS na Udemy, Alura e DIO')">clique</button>
-                    <span id="message0"></span>
-                </div>
-                <div>
-                    <h3>SCSS</h3><i class="fa-brands fa-sass"></i> <br>
-                    <button onclick="tableClick('Fiz o projeto Galleria durante o curso de Sass do Matheus Battisti e esse Site aqui')">clique</button>
-                    <span id="message1"></span>
-                </div>
-                <div>
-                    <h3>JavaScript</h3><i class="fa-brands fa-js"></i> <br>
-                    <button onclick="tableClick('Pratiquei lógica com os cursos da Alura, participei de um hackaton do curso #TeuFuturo e fiz alguns sites usando essa Linguagem')">clique</button>
-                    <span id="message2"></span>
-                </div>
-                <div>
-                    <h3>Vue.js</h3><i class="fa-brands fa-vuejs"></i><br>
-                    <button onclick="tableClick('Fiz o projeto Hamburgueria durante o curso de Vue.js do Matheus Battisti e estou criando um projeto com o framework')">clique</button>
-                    <span id="message3"></span>
-                </div>
-                <div>
-                    <h3>Git e GitHub</h3><i class="fa-brands fa-git-alt"></i> <br> <i class="fa-brands fa-github"></i>
-                    <br>
-                    <button onclick="tableClick('Uso para o versionamento de códigos dos meus projetos')">clique</button>
-                    <span id="message4"></span>
-                </div>
-                <div>
-                    <h3>figma</h3><i class="fa-brands fa-figma"></i> <br>
-                    <button onclick="tableClick('Faço a prototipação de meus projetos com o Figma')">clique</button>
-                    <span id="message5"></span>
-                </div>
-            </section>
-            <br> <br>
         </div>
 
 

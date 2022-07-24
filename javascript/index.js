@@ -1,3 +1,13 @@
+const messages = [
+  "Diversas Landing Pages feitas durante o curso #TeuFuturo e Web design (Udemy)",
+  "Estilizei as Landing Pages, e fiz cursos de CSS na Udemy, Alura e DIO",
+  "Fiz o projeto Galleria durante o curso de Sass do Matheus Battisti e esse Site aqui",
+  "Pratiquei lógica com os cursos da Alura, participei de um hackaton do curso #TeuFuturo e fiz alguns sites usando essa Linguagem",
+  "Fiz o projeto Hamburgueria durante o curso de Vue.js do Matheus Battisti e estou criando um projeto com o framework",
+  "Uso para o versionamento de códigos dos meus projetos",
+  "Faço a prototipação de meus projetos com o Figma"
+];
+
 //carousel
 
 const simpleCarousels = document.querySelectorAll(".container");
@@ -16,27 +26,35 @@ for (var i = 0; i < simpleCarousels.length; i++) {
   });
 }
 
-// click-table
+//table button
 
-// const messages = document.querySelectorAll(".container-message");
+function tableClick(i) {
+  let theMessage =  document.querySelector(`#message${i}`);
+  let btnMostrarMenos = document.querySelector(`#btnMostrarMenos${i}`);
+  let messagesI = messages[i];
+ theMessage.textContent = messagesI;
 
-// for (var m = 0; m < messages.length; m++) {
-//   function tableClick(mensagem) { 
-//     const messageX = document.querySelector(`#message${m}`);
-//     const message = messages[m];
-
-//     message.textContent = mensagem;
-//   }
-// }
-
-const message = document.querySelector("#message0");
-
-function tableClick(mensagem) {
-  message.textContent = mensagem;
+ if (theMessage.style.display === "none") {
+      theMessage.style.display = "inline";
+      btnMostrarMenos.innerHTML = "Mostrar Menos";
+ }else {
+  theMessage.style.display = "none";
+  btnMostrarMenos.innerHTML = "Clique";
+ }
 }
 
-tableClick(message);
+// mouseOver
+
+const mouseOver = document.getElementById("macrofotografia")
+const spanOver = document.querySelector("#macro-span")
+
+mouseOver.addEventListener('mouseover', () => {
+  spanOver.textContent = "Macrofotografia é registrar os pequenos detalhes, às vezes não perceptíveis a olho nu. "
+});
+
+//modal projects
 
 
 
-// passar mouse por cima
+
+

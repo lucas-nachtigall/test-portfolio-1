@@ -205,12 +205,21 @@ footer {
 
   img {
     width: 100%;
+
+    transition: 0.3s all ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(0.9);
+    }
   }
 
   p {
     margin-top: 1rem;
     color: variables.$text-color;
+    cursor: default;
   }
+
   .hover-projetos {
     @include mixins.projects;
   }
@@ -231,6 +240,7 @@ footer {
     @include mixins.link;
     color: variables.$bg-color;
     text-shadow: 0.5px 0.5px 3px #a450ae;
+    cursor: default;
   }
 
   @include mixins.mobile {
@@ -267,6 +277,17 @@ footer {
     @include mixins.mobile {
       font-size: 1.5rem;
     }
+  }
+
+  #macro-span {
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 1rem;
+
+    text-align: center;
+
+    grid-column: 2 / 3;
+    display: block;
   }
 
   .container {
@@ -314,51 +335,49 @@ footer {
   }
 }
 
-  .carrossel {
-    position: relative;
-    margin-top: 4vh;
-    overflow: hidden;
-    height: 500px;
-    width: 500px;
+.carrossel {
+  position: relative;
+  margin-top: 4vh;
+  overflow: hidden;
+  height: 500px;
+  width: 500px;
 
-    box-shadow: 2px 2px 4px black;
+  box-shadow: 2px 2px 4px black;
 
-    text-align: center;
+  text-align: center;
+
+  @include mixins.mobile {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 10% auto;
+  }
+
+  button {
+    display: inline-flex;
+    margin: 1rem 1rem;
+  }
+
+  .go {
+    @include mixins.button;
+    left: 34vw;
 
     @include mixins.mobile {
-      width: 100%;
-      height: 100%;
-      display: block;
-      margin: 10% auto;
-    }
-
-
-    button {
-      display: inline-flex;
-      margin: 1rem 1rem;
-    }
-
-    .go {
-      @include mixins.button;
-      left: 34vw;
-
-      @include mixins.mobile {
-        font-size: 2rem;
-        position:static;
-      }
-    }
-
-    .back {
-      @include mixins.button;
-      right: 34vw;
-
-      @include mixins.mobile {
-        font-size: 2rem;
-        position:static;
-      }
+      font-size: 2rem;
+      position: static;
     }
   }
 
+  .back {
+    @include mixins.button;
+    right: 34vw;
+
+    @include mixins.mobile {
+      font-size: 2rem;
+      position: static;
+    }
+  }
+}
 
 // sobre ---------------
 
@@ -502,7 +521,40 @@ footer {
     }
 
     @include mixins.mobile {
-      display: none;
+      thead {
+        display: none;
+      }
+
+      tbody {
+        .container-message {
+          grid-column: 1 / 2;
+
+          border-color: transparent;
+          width: 90vw;
+          height: 90vw;
+          position: relative;
+
+          td {
+            display: block;
+            margin-bottom: 0.5rem;
+          }
+        }
+      }
+    }
+    span {
+      animation: blinker 0.5s ease-in-out;
+    }
+
+    @keyframes blinker {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        opacity: 1;
+      }
     }
   }
 }
