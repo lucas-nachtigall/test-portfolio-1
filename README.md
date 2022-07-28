@@ -2,9 +2,9 @@
 
 Esse projeto de Portfólio responsivo foi criado por mim, Bruna fusiger. :boom:
 
-> Esse projeto foi criado com instuito de colocar em prática o estudado durante meses sobre desenvolvimento front-end através dos seguintes cursos:
-- Desenvolvimetno Web Completo: **Udemy**
-- #TeuFuturo: curso de front-end na plataforma **Alura** e softskills patrocinado pela Razor computadores
+> Esse projeto foi criado com intuito de colocar em prática o estudado durante meses sobre desenvolvimento front-end através dos seguintes cursos:
+- Desenvolvimento Web Completo: **Udemy**
+- #TeuFuturo: curso de front-end na plataforma **Alura** e de softskills patrocinado pela Razor computadores
 - Diversos cursos de desenvolvimento web e Git e GitHub na **DIO**
 - Curso de UX e Ui
 - Dentre outros cursos no Youtube
@@ -13,21 +13,21 @@ Esse projeto de Portfólio responsivo foi criado por mim, Bruna fusiger. :boom:
 
 1. Página Principal (home)
    - Links para as páginas segundárias e minhas redes
-     - Botões interativos com efeito para as páginas segundárias
+   - Botões interativos com efeito para as páginas segundárias
 
 2. Página Sobre
    - Uma breve descrição sobre mim 
-     - Botões para as minhas redes socias
-       -Tabela interativa onde apresento as tecnolgias que sei e já usei
+   - Botões para as minhas redes socias
+   -Tabela interativa onde apresento as tecnolgias que sei e já usei
 
 3. Página Projetos
    - Apresento alguns dos projetos que já criei e uma descrição
-     - Abre um Modal quando o usuário clica nos projetos
+   - Abre um Modal quando o usuário clica nos projetos
 
 4. Página Fotos
    - Mostro algumas das macrofotografias que já tirei 
-     - Implementei um Caroussel com Glider para passar as imagens
-      - Implementei um efeito de que quando o usuário passa o mouse por cima da palavra "macrofotografia" aparece o seu significado
+   - Implementei um Caroussel com Glider para passar as imagens
+   - Implementei um efeito de que quando o usuário passa o mouse por cima da palavra "macrofotografia" aparece o seu significado
       
       
 ## Tecnologias
