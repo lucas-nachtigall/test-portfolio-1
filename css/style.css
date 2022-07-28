@@ -597,8 +597,7 @@ footer span {
 .grid-container-main .sobre-tabela table {
   border-collapse: collapse;
   text-align: center;
-  max-width: 90px;
-  width: 980px;
+  max-width: 90%;
 }
 .grid-container-main .sobre-tabela table th {
   text-transform: uppercase;
@@ -612,7 +611,7 @@ footer span {
   border: 2px solid black;
   background-color: rgba(164, 80, 174, 0.2);
   backdrop-filter: blur(10px);
-  padding: 20px 130px;
+  padding: 5% 8rem;
   cursor: default;
 }
 .grid-container-main .sobre-tabela table th button,
