@@ -1,5 +1,3 @@
-descrição breve
-
 # Bruna.s-portfolio
 
 Esse projeto de Portfólio responsivo foi criado por mim, Bruna fusiger. :boom:
