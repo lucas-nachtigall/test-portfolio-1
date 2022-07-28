@@ -96,16 +96,10 @@
 }
 
 @mixin mobile {
-  @media (max-width: 700px) {
+  @media (max-width: 800px) {
     @content;
   }
 }
-
-@mixin mobile-small {
-    @media (max-width: 414px) {
-      @content;
-    }
-  }
 
 @mixin footer {
   .footer {

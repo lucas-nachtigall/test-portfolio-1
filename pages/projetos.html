@@ -18,13 +18,13 @@
                     <a href="/index.html">Home</a>
                 </li>
                 <li>
+                    <a href="/pages/sobre.html">Sobre</a>
+                </li>
+                <li>
                     <a href="/pages/projetos.html" class="active">projetos</a>
                 </li>
                 <li>
                     <a href="/pages/fotos.html">Fotos</a>
-                </li>
-                <li>
-                    <a href="/pages/sobre.html">Sobre</a>
                 </li>
             </ul>
         </nav>
@@ -36,61 +36,108 @@
             <br><br>
         </div>
 
-        <div class="col1 hover-projetos">
-            <img src="/img/Forrest-Gump.png" alt="Forest Gump web site">
+        <section class="col1 hover-projetos">
+
+            <div id="modal0" class="modal">
+                <span class="close" id="close0" onclick="imageClose(0)"><i class="fas fa-times"></i></span>
+                <div class="modalContent">
+                    <div class="modalImg"> <img src="/img/Forrest-Gump.png" alt="Forest Gump web site"></div>
+                </div>
+            </div>
+
+            <div onclick="imageClick(0)" id="imageLink0"><img src="/img/Forrest-Gump.png" alt="Forest Gump web site">
+            </div>
             <h3 class="subtitle">Forrest Gump</h3>
             <div class="flex">
                 <p>Projeto proposto durante o evento NLW Return da Rocketseat. Foram sete dias de muito aprendizado e
-                    o desafio final era criar um projeto com base em algo que você gostava. Resolvi fazer uma biografia 
-                    do meu personagem de filme favorito: Forrest Gump. Para esse projeto, eu utilizei HTML, CSS e JavaScript.
+                    o desafio final era criar um projeto com base em algo que você gostava. Resolvi fazer uma biografia
+                    do meu personagem de filme favorito: Forrest Gump. Para esse projeto, eu utilizei HTML, CSS e
+                    JavaScript.
                 </p>
             </div>
-        </div>
-        <div class="col2 hover-projetos">
-            <img src="/img/responsividade.png" alt="Site Range Hotels">
+        </section>
+
+        <section class="col2 hover-projetos">
+
+            <div id="modal1" class="modal">
+                <span class="close" id="close1" onclick="imageClose(1)"><i class="fas fa-times"></i></span>
+                <div class="modalContent">
+                    <div class="modalImg"> <img src="/img/responsividade.png" alt="Site responsivo Range Hotels"></div>
+                </div>
+            </div>
+
+            <div onclick="imageClick(1)" id="imageLink1"><img src="/img/responsividade.png"
+                    alt="Site responsivo Range Hotels"></div>
             <h3 class="subtitle">Range Hotels</h3>
             <div class="flex">
-                <p>Página totalmente responsiva para os três tamanhos criada para estudar responsividade com Media queries e 
+                <p>Página totalmente responsiva para os três tamanhos criada para estudar responsividade com Media
+                    queries e
                     outros conceitos de CSS.
                 </p>
             </div>
-        </div>
-        <div class="col3 hover-projetos">
-            <img src="/img/gallery.png" alt="Galeria de imagens com Sass">
+        </section>
+
+        <section class="col3 hover-projetos">
+
+            <div id="modal2" class="modal">
+                <span class="close" id="close2" onclick="imageClose(2)"><i class="fas fa-times"></i></span>
+                <div class="modalContent">
+                    <div class="modalImg"> <img src="/img/gallery.png" alt="Galeria de imagens com Sass"></div>
+                </div>
+            </div>
+
+            <div onclick="imageClick(2)" id="imageLink2"><img src="/img/gallery.png" alt="Galeria de imagens com Sass">
+            </div>
             <h3 class="subtitle">Gallery</h3>
             <div class="flex">
-                <p>A Galleria foi criada com intuito de praticar Sass. Com esse projeto pude exercitar meus aprendizados do curso 
+                <p>A Galleria foi criada com intuito de praticar Sass. Com esse projeto pude exercitar meus aprendizados
+                    do curso
                     de Sass do desenvolvedor Matheus Battisti.
                 </p>
             </div>
-        </div>
-        <div class="col1 hover-projetos">
-            <img src="/img/login.png" alt="página de login da Comunidade Yuri Silva">
+        </section>
+
+        <section class="col1 hover-projetos">
+
+            <div id="modal3" class="modal">
+                <span class="close" id="close3" onclick="imageClose(3)"><i class="fas fa-times"></i></span>
+                <div class="modalContent">
+                    <div class="modalImg"> <img src="/img/login.png" alt="página de login da Comunidade Yuri Silva">
+                    </div>
+                </div>
+            </div>
+
+            <div onclick="imageClick(3)" id="imageLink3"><img src="/img/login.png"
+                    alt="página de login da Comunidade Yuri Silva"></div>
             <h3 class="subtitle">Login</h3>
             <div class="flex">
-                <p>Desafio proposto na Comunidade Codelândia no Discord. Nessa comunidade, o desenvolvedor Iuri Silva passa o design
-                    criado por ele no Figma e desafia os outros desenvolvedores a programar o projeto da maneira que lhes é pertinente.
+                <p>Desafio proposto na Comunidade Codelândia no Discord. Nessa comunidade, o desenvolvedor Iuri Silva
+                    passa o design
+                    criado por ele no Figma e desafia os outros desenvolvedores a programar o projeto da maneira que
+                    lhes é pertinente.
                 </p>
             </div>
-        </div>
-        <div class="col3 hover-projetos">
-            <img src="/img/socrates.png" alt="Forest Gump web site">
+        </section>
+
+        <section class="col3 hover-projetos">
+
+            <div id="modal4" class="modal">
+                <span class="close" id="close4" onclick="imageClose(4)"><i class="fas fa-times"></i></span>
+                <div class="modalContent">
+                    <div class="modalImg"> <img src="/img/socrates.png" alt="Site com biografia de Sócrates"></div>
+                </div>
+            </div>
+
+            <div onclick="imageClick(4)" id="imageLink4"><img src="/img/socrates.png"
+                    alt="Site com biografia de Sócrates"></div>
             <h3 class="subtitle">Sócrates</h3>
             <div class="flex">
-                <p>Essa foi a primeira Landing Page que criei no começo dos meus estudos (2021). O conteúdo é a biografia do filósofo grego
+                <p>Essa foi a primeira Landing Page que criei no começo dos meus estudos (2021). O conteúdo é a
+                    biografia do filósofo grego
                     Sócrates. Criei a partir da aula de HTML e CSS da Rafaela Ballerini.
                 </p>
             </div>
-        </div>
-
-        <div class="modal">
-            <span class="close"><i class="fas fa-times"></i></span>
-            <div class="modalContent">
-                <img src="" class="modalImg" />
-                <span class="modalTxt"></span>
-            </div>
-        </div>
-
+        </section>
         <br>
 
         <section>
@@ -100,20 +147,20 @@
                         <a href="/index.html">Home</a>
                     </li>
                     <li>
+                        <a href="/pages/sobre.html">Sobre</a>
+                    </li>
+                    <li>
                         <a href="/pages/projetos.html">projetos</a>
                     </li>
                     <li>
                         <a href="/pages/fotos.html">Fotos</a>
-                    </li>
-                    <li>
-                        <a href="/pages/sobre.html">Sobre</a>
                     </li>
                 </ul>
             </nav>
         </section>
     </main>
 
-    <script src="/javascript/index.js"></script>
+    <script src="/javascript/modal.js"></script>
     <script src="https://kit.fontawesome.com/7368c40b21.js" crossorigin="anonymous"></script>
 </body>
 

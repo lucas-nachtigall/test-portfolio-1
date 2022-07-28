@@ -9,6 +9,7 @@
 
 body {
   margin-inline: 2rem;
+
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
@@ -172,11 +173,14 @@ footer {
 // -------------- TEMPLATE PADRÃO NOVAS PÁGINAS (grid)
 
 .grid-Container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
 
   height: 35vh;
+  width: 100%;
+  max-width: 1000px;
   margin-bottom: 5%;
 
   align-items: center;
@@ -187,9 +191,8 @@ footer {
     margin-bottom: 15%;
   }
 
-  @include mixins.mobile-small {
-    margin-bottom: 15%;
-    height: 25vh;
+  img {
+    margin-bottom: 15px;
   }
 }
 
@@ -246,6 +249,53 @@ footer {
   @include mixins.mobile {
     display: block;
     margin-top: 15%;
+  }
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.4);
+  // z-index: 100;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 30;
+  left: 0;
+
+  display: none;
+  opacity: 0;
+
+  transition: opacity 500ms;
+  transform: none;
+
+  &.show {
+    opacity: 100;
+  }
+
+  .close {
+    z-index: 110;
+    position: absolute;
+    color: variables.$secundary-color;
+    font-size: 2rem;
+
+    left: 80%;
+    top: 5%;
+  }
+
+  .modalImg img {
+    width: 50%;
+    transform: none;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+
+    @include mixins.mobile {
+      display: none;
+    }
+  }
+
+  @include mixins.mobile {
+    background-color: transparent;
+    top: -14vh;
   }
 }
 
@@ -360,7 +410,7 @@ footer {
 
   .go {
     @include mixins.button;
-    left: 34vw;
+    left: 420px;
 
     @include mixins.mobile {
       font-size: 2rem;
@@ -370,7 +420,7 @@ footer {
 
   .back {
     @include mixins.button;
-    right: 34vw;
+    right: 420px;
 
     @include mixins.mobile {
       font-size: 2rem;
@@ -381,15 +431,12 @@ footer {
 
 // sobre ---------------
 
-.col-1 {
-  grid-column: 1 / 2;
-}
-
 .col-2 {
   grid-row: 1 / 2;
   grid-column: 3 / 4;
-  @include mixins.flexbox;
   justify-content: flex-end;
+
+  @include mixins.flexbox;
 
   img {
     width: 40%;
@@ -401,196 +448,193 @@ footer {
 }
 
 .grid-container-main {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 6fr;
-  gap: 0 20px;
+  width: 100%;
+  max-width: 90rem;
 
-  height: 50vh;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(5, 20%);
+  grid-template-rows: 6fr;
 
   @include mixins.mobile {
     display: block;
   }
-}
 
-.col-3 {
-  grid-column: 1 / 4;
+  .col-3 {
+    grid-column: 1 / 4;
 
-  p {
-    margin: 12px 0;
-  }
-
-  img {
-    width: 40%;
-    margin-bottom: 10vh;
-  }
-
-  h1 {
-    @include mixins.title;
-    text-transform: uppercase;
-  }
-}
-
-.col-4 {
-  grid-column: 5 / 6;
-
-  li {
-    @include mixins.lists;
-    display: flex;
-    margin-bottom: 2rem;
-
-    a {
-      @include mixins.btn;
-
-      &:hover {
-        background-color: variables.$primary-color;
-        color: variables.$text-color;
-      }
+    p {
+      margin: 12px 0;
     }
 
-    @include mixins.mobile {
-      display: block;
-      margin-top: 15%;
+    img {
+      width: 40%;
+      margin-bottom: 10vh;
     }
-  }
-}
 
-//tabela
-.col-5 {
-  grid-column: 1 / 6;
-}
-
-.row-1 {
-  grid-row: 2 / 3;
-  p {
-    grid-row: 2 / 3;
-  }
-}
-
-.row-2 {
-  grid-row: 3 / 4;
-}
-
-.sobre-tabela {
-  margin-block: 4rem;
-
-  h1 {
-    margin-bottom: 1.5rem;
-    @include mixins.title;
-    text-transform: uppercase;
-  }
-
-  table {
-    border-collapse: collapse;
-    text-align: center;
-
-    th {
+    h1 {
+      @include mixins.title;
       text-transform: uppercase;
-      color: variables.$secundary-color;
-      letter-spacing: 1px;
-      font-weight: 700;
     }
+  }
 
-    th,
-    tr,
-    td {
-      border: 2px solid black;
-      background-color: rgba($color: #a450ae, $alpha: 0.2);
-      backdrop-filter: blur(10px);
-      padding: 2rem 10rem;
-      cursor: default;
+  .col-4 {
+    grid-column: 5 / 6;
 
-      button {
-        @include mixins.button-table;
-        margin: 1rem 0;
-      }
-
-      button:hover {
-        background-color: variables.$bg-color;
-        color: variables.$secundary-color;
-      }
+    li {
+      @include mixins.lists;
+      display: flex;
+      margin-bottom: 2rem;
 
       a {
-        font-size: 2rem;
-        transition: 0.5s;
+        @include mixins.btn;
 
         &:hover {
-          color: variables.$secundary-color;
+          background-color: variables.$primary-color;
+          color: variables.$text-color;
         }
       }
+
+      @include mixins.mobile {
+        display: block;
+        margin-top: 15%;
+      }
+    }
+  }
+
+  .row-1 {
+    grid-row: 2 / 3;
+
+    p {
+      grid-row: 2 / 3;
+    }
+  }
+
+  //tabela
+  .sobre-tabela {
+    margin-block: 4rem;
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
+
+    h1 {
+      margin-bottom: 1.5rem;
+      @include mixins.title;
+      text-transform: uppercase;
     }
 
-    @include mixins.mobile {
-      thead {
-        display: none;
+    table {
+      border-collapse: collapse;
+      text-align: center;
+      max-width: 90px;
+      width: 980px;
+
+      th {
+        text-transform: uppercase;
+        color: variables.$secundary-color;
+        letter-spacing: 1px;
+        font-weight: 700;
       }
 
-      tbody {
-        .container-message {
-          grid-column: 1 / 2;
+      th,
+      tr,
+      td {
+        border: 2px solid black;
+        background-color: rgba($color: #a450ae, $alpha: 0.2);
+        backdrop-filter: blur(10px);
+        padding: 20px 130px;
+        cursor: default;
 
-          border-color: transparent;
-          width: 90vw;
-          height: 90vw;
-          position: relative;
+        button {
+          @include mixins.button-table;
+          margin: 1rem 0;
+        }
 
-          td {
-            display: block;
-            margin-bottom: 0.5rem;
+        button:hover {
+          background-color: variables.$bg-color;
+          color: variables.$secundary-color;
+        }
+
+        a {
+          font-size: 2rem;
+          transition: 0.5s;
+
+          &:hover {
+            color: variables.$secundary-color;
           }
         }
       }
-    }
-    span {
-      animation: blinker 0.5s ease-in-out;
-    }
 
-    @keyframes blinker {
-      0% {
-        opacity: 0;
+      @include mixins.mobile {
+        thead {
+          display: none;
+        }
+
+        tbody {
+          .container-message {
+            border-color: transparent;
+            max-width: 90%;
+            position: relative;
+            margin: 30px;
+
+            td {
+              display: block;
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
       }
-      50% {
-        opacity: 0.5;
+      span {
+        animation: blinker 0.5s ease-in-out;
       }
-      100% {
-        opacity: 1;
+
+      @keyframes blinker {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 1;
+        }
       }
     }
   }
-}
 
-.tabela-mobile {
-  display: none;
-}
-
-@include mixins.mobile {
   .tabela-mobile {
-    display: block;
-    text-align: center;
+    display: none;
+  }
 
-    div {
-      margin-bottom: 1rem;
-      border: 1px solid #fff;
-      border-radius: 4px;
-      padding: 2rem 20%;
+  @include mixins.mobile {
+    .tabela-mobile {
+      display: block;
+      text-align: center;
 
-      h3 {
-        text-transform: uppercase;
-        @include mixins.link;
-      }
+      div {
+        margin-bottom: 1rem;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        padding: 2rem 20%;
 
-      i {
-        margin-top: 1rem;
-      }
+        h3 {
+          text-transform: uppercase;
+          @include mixins.link;
+        }
 
-      button {
-        @include mixins.button-table;
-        margin: 1rem 0;
+        i {
+          margin-top: 1rem;
+        }
+
+        button {
+          @include mixins.button-table;
+          margin: 1rem 0;
+        }
       }
     }
   }
 }
-
 .footer {
   display: none;
 }
