@@ -1,3 +1,5 @@
+https://brunafusiger.github.io/Bruna.s-portfolio/
+
 # Bruna.s-portfolio
 
 Esse projeto de Portfólio responsivo foi criado por mim, Bruna fusiger. :boom:
